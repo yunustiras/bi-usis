@@ -18,7 +18,7 @@ $ pip install pipenv
 3.Reponun klonunu alin. Ve klasorun icine giriniz. Ve pipenv ile bagimliliklari kurunuz.
 
 ```bash
-$ git clone https://github.com/vanhohen/bi-usis
+$ git clone https://github.com/yunustiras/bi-usis
 $ cd bi-usis/app
 $ pipenv install
 ```
