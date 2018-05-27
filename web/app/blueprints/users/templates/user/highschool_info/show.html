@@ -1,0 +1,24 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Lise Bilgileri</h1>
+        {% if user.general_info[0] %}
+        <a class="first" href="{{ url_for('users.show_user', user_id=user.id)}}">Geri</a>
+        <a href="{{ url_for('users.edit_user_highschool_info', user_id=user.id) }}">Guncelle</a>
+            <div class="infoList">
+                <div class="info"><span>Mezun Olunan Lise: </span>{{user.highschool_info[0].school_name}}</div>
+                <div class="info"><span>Mezun Olunan Bölüm: </span>{{user.highschool_info[0].school_department}}</div>
+                <div class="info"><span>Diploma Başarı Notu: </span>{{user.highschool_info[0].diploma_success_note}}</div>
+                <div class="info"><span>Diploma Kolu / Branşı: </span>{{user.highschool_info[0].diploma_course_branch}}</div>
+                <div class="info"><span>Yabanci Dil: </span>{{user.highschool_info[0].foreign_language}}</div>
+            </div>
+        {% else %}
+            <p>Mezun olunan Lise bilgisi yok.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "username": "yunus",
+      "password": "123456",
+      "first_name" : "Yunus",
+      "middle_name" : "At",
+      "surname" : "Tiras",
+      "email": "yunus@gmail.com",
+      "role_id": 3,
+      "general_info": {
+        "tc": "111111111",
+        "nationality": "Afrika",
+        "gender": "Gay",
+        "birthplace":"Dogu Almanya",
+        "birthdate": "12.12.12",
+        "pension_fund": "False",
+        "military_service": "True",
+        "disability_status": "Sikintim Yok.",
+        "preference_order": 3,
+        "is_want_scholarship": "True"
+      },
+      "highschool_info": {
+        "school_name": "Haci Mustafa",
+        "school_department": "Sayisal",
+        "diploma_success_note": 72.35,
+        "diploma_course_branch": "",
+        "foreign_language": "Ingilizce"
+      },
+      "population_info": {
+        "neighborhoodNvillage": "Eseneler Mahallesi",
+        "population_administration": "Besiktas",
+        "c_no": 20,
+        "id_card_no": 2,
+        "family_queue_no": 6,
+        "queue_no": 5
+      },
+      "university_info": {
+        "university_student_no": "15011000",
+        "faculty": "Elektrik Elektronik",
+        "department": "Bilgisayar Muh.",
+        "teaching_style": "Orgun",
+        "student_score": "2.8",
+        "completed_yok": "Hayir"
+      }
+    },
+    {
+      "username": "tevfik",
+      "password": "123456",
+      "first_name" : "Ahmet",
+      "middle_name" : "Tevfik",
+      "surname" : "Inan",
+      "email": "ahmet@tevfik.inan",
+      "role_id": 2
+    },
+    {
+      "username": "bilge",
+      "password": "123456",
+      "first_name" : "Ayşe",
+      "middle_name" : "Bilge",
+      "surname" : "Gunduz",
+      "email": "ayse@bilge.gunduz",
+      "role_id": 2
+    }
+  ]
+}

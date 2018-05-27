@@ -1,0 +1,25 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Nüfus Bilgileri</h1>
+        {% if user.population_info[0] %}
+            <a class="first" href="{{ url_for('users.show_user', user_id=user.id)}}">Geri</a>
+            <a href="{{ url_for('users.edit_user_population_info', user_id=user.id) }}">Guncelle</a>
+            <div class="infoList">
+                <div class="info"><span>Mahalle / Köy: </span>{{user.population_info[0].neighborhoodNvillage}}</div>
+                <div class="info"><span>Verildiği Nüfus İdaresi: </span>{{user.population_info[0].population_administration}}</div>
+                <div class="info"><span>Cilt No: </span>{{user.population_info[0].c_no}}</div>
+                <div class="info"><span>Nüfus Cüzdanı No: </span>{{user.population_info[0].id_card_no}}</div>
+                <div class="info"><span>Aile Sıra No: </span>{{user.population_info[0].family_queue_no}}</div>
+                <div class="info"><span>Sıra No: </span>{{user.population_info[0].queue_no}}</div>
+            </div>
+        {% else %}
+            <p>Nüfus bilgisi yok.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

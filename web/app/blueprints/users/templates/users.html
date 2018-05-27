@@ -1,0 +1,55 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer users">
+            <h1 class="newPersonal">Tüm Kullanıcılar</h1>
+            <form class="example" action="{{ url_for('users.search') }}">
+              <input type="text" placeholder="Search.." name="query">
+              <button type="submit" value="Submit" class="btn btn-primary">Arama</button>
+            </form>
+            {% if users %}
+            <div class="usersList">
+                <table style="width:100%;margin:10px;">
+                    <caption>Bütün Kullanıcılar</caption>
+                    <tr>
+                        <th>İncele</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Adı</th>
+                        <th>İkinci Adı</th>
+                        <th>Soyadı</th>
+                        <th>E-mail Adresi</th>
+                        <th>Statüsü</th>
+                    </tr>
+                    {% for user in users.items %}
+                        <tr>
+                            <td><a href="{{ url_for('users.show_user', user_id=user.id)}}">Detay</a></td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.first_name|truncate(20,False,'...',0)}}</td>
+                            <td>{{user.middle_name|truncate(20,False,'...',0)}}</td>
+                            <td>{{user.surname|truncate(20,False,'...',0)}}</td>
+                            <td>{{user.email|truncate(20,False,'...',0)}}</td>
+                            <td>{{user.role.name}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+            <div class="pagination">
+            {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if page_num %}
+                    {% if users.page == page_num %}
+                    <a class="btn btn-info mb-4" href="{{ url_for('users.home') }}?page={{page_num}}">{{ page_num }}</a>
+                    {% else %}
+                    <a class="btn btn-outline-info mb-4" href="{{ url_for('users.home') }}?page={{page_num}}">{{ page_num }}</a>
+                    {% endif %}
+                {% else %}
+                    ...
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

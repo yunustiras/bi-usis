@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build: web/
+    restart: always
+    container_name: biusis_web
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+    links:
+      - db
+
+  db:
+    image: mysql:5.6
+    restart: always
+    container_name: biusis_db
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=biusis
+      - MYSQL_USER=biusis
+      - MYSQL_PASSWORD=biusis

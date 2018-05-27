@@ -1,0 +1,35 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">Yorum Yap</h1>
+            <div class="mainPageLogo">
+                <img src="{{ url_for('static', filename='images/ytulogo.png') }}">
+            </div>
+
+            {% if opinion_list %}
+            <div class="usersList">
+                <table style="width:100%;margin:10px;">
+                    <caption>Bütün Görüşler</caption>
+                    <tr>
+                        <th>id</th>
+                        <th>Görüş</th>
+                        <th>Oluşturulma Tarihi</th>
+                    </tr>
+                    {% for opinion in opinion_list %}
+                        <tr>
+                            <td>{{opinion.id}}</td>
+                            <td>{{opinion.content}}</td>
+                            <td>{{opinion.create_date}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">Danışman Ata</h1>
+            <div class="mainPageLogo">
+                <img src="{{ url_for('static', filename='images/ytulogo.png') }}">
+            </div>
+            <form action="" method="post">
+              <select name="teacher">
+                {% for teacher in teachers %}
+                    <option value="{{ teacher.username }}">{{ teacher.username }}</option>
+                {% endfor %}
+              </select>
+
+              <select name="student">
+                {% for student in students %}
+                    <option value="{{ student.username }}">{{ student.username }}</option>
+                {% endfor %}
+              </select>
+              <button>Danışmanı Ata</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

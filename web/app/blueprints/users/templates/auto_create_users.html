@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">Dosyadan Kullanıcı Yükleme</h1>
+            <div class="userUpload">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="uploadFile">
+                        <strong>Yüklenecek Dosya:</strong>
+                        <input type="file" name="file"/>
+                    </div>
+                    <div class="uploadButton">
+                        <input type="submit" value="Upload" />
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

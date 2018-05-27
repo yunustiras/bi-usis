@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">Fotograk Yukleme</h1>
+            <div class="userUpload">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="uploadFile">
+                        <strong>Yüklenecek Resim:</strong>
+                        <input type="file" name="file" accept=".json"/>
+                    </div>
+                    <div class="uploadButton">
+                        <input type="submit" value="Upload" />
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">Yorum Yap</h1>
+            <div class="mainPageLogo">
+                <img src="{{ url_for('static', filename='images/ytulogo.png') }}">
+            </div>
+            <div class="makeComment">
+                <form action="" method="post">
+                <textarea name="content" id="editor"></textarea>
+                <div class="formButtonContainer">
+                    <button class="btn btn-primary">Yorum Yap</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

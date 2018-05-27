@@ -1,0 +1,14 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer">
+            <h1 class="newPersonal">WELCOME TO BI USIS</h1>
+            <div class="mainPageLogo">
+                <img src="{{ url_for('static', filename='images/ytulogo.png') }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}

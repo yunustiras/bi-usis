@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Giriş Bilgileri</h1>
+        {% if user %}
+        <a class="first" href="{{ url_for('users.show_user', user_id=user.id)}}">Geri</a>
+        <a href="{{ url_for('users.edit_user_login_info', user_id=user.id) }}">Guncelle</a>
+            <div class="infoList">              
+                <div class="info">
+                    <span>Kullanıcı Adı: </span>{{user.username}}
+                </div>
+                <div class="info">
+                    <span>Adı: </span>{{user.first_name}}
+                    <a href="{{ url_for('users.show_user_login_info_in_log', user_id=user.id, field='first_name', object_id=user.id) }}">Logs</a>
+                </div>
+                {% if user.middle_name %}
+                    <div class="info">
+                        <span>İkinci Adı: </span>{{user.middle_name}}
+                        <a href="{{ url_for('users.show_user_login_info_in_log', user_id=user.id, field='middle_name', object_id=user.id) }}">Logs</a>
+                    </div>
+                {% endif %}
+                <div class="info">
+                    <span>Soyadı: </span>{{user.surname}}
+                    <a href="{{ url_for('users.show_user_login_info_in_log', user_id=user.id, field='surname', object_id=user.id) }}">Logs</a>
+                </div>
+                <div class="info">
+                    <span>E-mail Adresi: </span>{{user.email}}
+                    <a href="{{ url_for('users.show_user_login_info_in_log', user_id=user.id, field='email', object_id=user.id) }}">Logs</a>
+                </div>
+                <div class="info">
+                    <span>Statüsü: </span>{{user.role.name}}
+                    <a href="{{ url_for('users.show_user_login_info_in_log', user_id=user.id, field='role_id', object_id=user.id) }}">Logs</a>
+                </div>
+            </div>
+        {% else %}
+            <p>Login bilgisi yok.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

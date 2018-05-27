@@ -1,0 +1,38 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer users">
+            <h1 class="newPersonal">DANIŞMANLIK LİSTESİ</h1>
+            <form class="example" action="{{ url_for('users.search') }}">
+              <input type="text" placeholder="Search.." name="query">
+              <button type="submit" value="Submit" class="btn btn-primary" >Arama</button>
+            </form>
+
+            {% if relation_list %}
+            <div class="usersList">
+                <table style="width:100%;margin:10px;">
+                    <caption>Danışmanlık İlişkileri</caption>
+                    <tr>
+                        <th>id</th>
+                        <th>Teacher name</th>
+                        <th>Student name</th>
+                        <th></th>
+                    </tr>
+                    {% for relation in relation_list %}
+                        <tr>
+                            <td>{{relation.id}}</td>
+                            <td>{{relation.teacher_id}}</td>
+                            <td>{{relation.student_id}}</td>
+                            <th><a href="#">Danışmanı kaldır</a></th>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

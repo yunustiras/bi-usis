@@ -1,0 +1,59 @@
+<div class="leftContainer">
+    <div class="mainStatus">
+        <div class="usernameAndStatus">
+            <div class="uName">{{ context.user.first_name }} {{context.user.middle_name }} {{context.user.surname}}<span>({{ context.user.role.name }})</span></div>
+        </div>
+        <div class="dateIp">
+            <div class="loginDate">Login Date: {{ context.login_date }}</div>
+            <div class="loginIp">Login Ip: {{ context.ip }}</div>
+        </div>
+    </div>
+    <div class="menuContainer">
+        <div class="menuTitle">Islemler</div>
+        <ul class="menu-list">
+            <li drop><a href="{{ url_for('users.show_user', user_id=context.user.id)}}">Profilim</a>
+                <ul class="drop-down animation">
+                        <li> <a href="{{ url_for('users.show_user_login_info', user_id=context.user.id) }}">Giriş Bilgilerim</a> </li>
+                        <li>
+                            <a href="{{ url_for('users.show_user_general_info', user_id=context.user.id) }}">Kişisel Bilgilerim</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('users.show_user_highschool_info', user_id=context.user.id) }}">Lise Bilgilerim</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('users.show_user_population_info', user_id=context.user.id) }}">Nufus Bilgilerim</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('users.show_user_university_info', user_id=context.user.id) }}">Universite Bilgilerim</a>
+                        </li>
+                </ul>
+            </li>
+            {% if context.user.role_id != 3 %}
+            <li drop><a href="#">Danışmanlık Sistemi</a>
+              <ul class="drop-down animation">
+                <li><a href="{{ url_for('show_consultancy', user_id=context.user.id) }}">Danışmanı olduğum kişiler</a></li>
+                {% if context.user.role.access('AssignCons') %}
+                    <li><a href="{{ url_for('assign_consultant') }}">Danışmanı ata</a></li>
+                    <li><a href="{{ url_for('show_all_consultancy') }}">Tüm Danışmanlık İlişkileri</a></li>
+                {% endif %}
+              </ul>
+            </li>
+            {% endif %}
+            {% if context.user.role.access('CreateUser') %}
+                <li drop><a href="#">Kullanıcı ekle</a>
+                    <ul class="drop-down animation">
+                        <li> <a href="{{ url_for('users.create') }}">Yeni Kullanici Olustur</a> </li>
+                        <li> <a href="{{ url_for('users.auto_create_users') }}">Dosyadan Yükle</a> </li>
+                    </ul>
+                </li>
+            {% endif %}
+            {% if context.user.role.access('SeeAllUser') %}
+                <li><a href="{{ url_for('users.home') }}">Tüm Kullanicilar</a></li>
+            {% endif %}
+        </ul>
+        <div class="logoutContainer">
+            <button type="button" onclick="location.href='/logout';">Logout</button>
+        </div>
+    </div>
+
+</div>

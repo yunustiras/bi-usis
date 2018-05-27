@@ -1,0 +1,47 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Kullanicinin Kişisel Bilgilerini Güncelleme</h1>
+        <a class="first" href="{{ url_for('users.show_user_general_info', user_id=user.id)}}">Geri</a>
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.tc,class_="form-control", readonly = not context.user.role.access('EditTc') ) }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.nationality, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.birthplace, class_="form-control", readonly=False) }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.birthdate, class_="form-control", readonly=False) }}
+            </div>
+            <div class="form-group">
+                    {{ render_field(form.gender, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                    {{ render_field(form.disability_status, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                    {{ render_field(form.preference_order, class_="form-control", readonly=True) }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.pension_fund, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.military_service, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.is_want_scholarship, class_="form-control") }}
+            </div>
+            <p class="formButtonContainer">
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

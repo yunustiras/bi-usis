@@ -1,0 +1,37 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Universite Bilgileri</h1>
+        {% if user.university_info[0] %}
+        <a class="first" href="{{ url_for('users.show_user', user_id=user.id)}}">Geri</a>
+        <a href="{{ url_for('users.edit_user_university_info', user_id=user.id) }}">Guncelle</a>
+            <div class="infoList">
+                <div class="info">
+                    <span>Üniversite Öğrenci No: </span>{{user.university_info[0].university_student_no}}
+                </div>
+                <div class="info">
+                    <span>Fakulte: </span>{{user.university_info[0].faculty}}
+                </div>
+                <div class="info">
+                    <span>Bolum: </span>{{user.university_info[0].department}}
+                </div>
+                <div class="info"
+                    ><span>Ogrenim sekli: </span>{{user.university_info[0].teaching_style}}
+                </div>
+                <div class="info">
+                    <span>Öğrenci Puani: </span>{{user.university_info[0].student_score}}
+                </div>
+                <div class="info">
+                    <span>Tamamlanmis Yok: </span>{{user.university_info[0].completed_yok}}
+                </div>
+            </div>
+        {% else %}
+            <p>Universite bilgisi yok.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,374 @@
+body {
+    background-color: #f3f3f3;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+list
+/* Login Page  */
+.loginContainer {
+    width: 100%;
+    max-width: 400px;
+    padding: 0;
+    background-color: #f9f9f9;
+    margin: 30px auto;
+}
+.loginHeader{
+    background-color: #31658c;
+    padding: 15px 0;
+    text-align: center;
+}
+.loginPage{
+    background-color: #445566;
+}
+.loginPage .loginContainer{
+    width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.loginHeader h2 {
+    color: #fff;
+    font-size: 21px;
+    padding: 10px 0;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top:10px;
+}
+.formContainer {
+    padding:24px;
+}
+.form-group .form-control{
+    border-radius:0;
+    border:1px solid #000;
+    height:46px;
+}
+.form-group .form-control:focus{
+    border-radius:0;
+    border-color:#000;
+    box-shadow: none;
+}
+.formContainer form button{
+    width: 100%;
+    border-radius: 0;
+    background-color: #31658c;
+    padding:10px 0;
+    margin-top:20px;
+}
+.container{
+    background-color: #fff;
+    display: inline-block;
+    padding:0;
+    max-width:1250px;
+}
+/*Main Page First css */
+.mainPage{
+    position:relative;
+    display:inline-block;
+    width: 100%;
+    max-width:100%;
+}
+.leftContainer{
+    width: 30%;
+    float: left;
+}
+.rightContainer{
+    width: 70%;
+    float: right;
+}
+.menu-list li {
+    list-style-type: none;
+    float: left;
+    text-align: left;
+    width: 100%;
+    border: 1px solid #fff;
+    border-bottom: 0;
+    background-color: #6d88a2;
+    position:  relative;
+    display:  inline-block;
+}
+.menuContainer{
+    display:inline-block;
+    padding: 30px 15px;
+    background-color: #fff;
+    margin:  0 auto;
+    width:  100%;
+}
+.menu-list {
+    display:inline-block;
+    padding-left:0;
+    width:  100%;
+    float:  left;
+    position:  relative;
+}
+.menuTitle{
+    text-align:left;
+    padding: 6px 10px;
+    font-weight: 500;
+}
+.menu-list li a {
+    padding: 12px 10px;
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+}
+.menu-list li:hover a {
+    color: #000;
+    text-decoration: none;
+}
+.menu-list li:last-child {
+    border-bottom: 1px solid #fff;
+}
+
+.menu-list li ul li {
+}
+.mainStatus{
+    background-color: #d4d4d4;
+    padding: 5px;
+    border-right: 1px solid #fff;
+}
+.usernameAndStatus .uName{
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    letter-spacing: 1px;
+}
+.usernameAndStatus .uName span{
+    font-weight:bold;
+}
+.dateIp{
+    padding: 10px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+}
+.menu-list li ul.drop-down {
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999999;
+    left: 345px;
+    float:  left;
+    width: 266px;
+    padding: 0;
+    top: 0;
+    display: none;
+}
+
+.menu-list li ul.drop-down li a {
+    text-decoration: none;
+    display: block;
+}
+
+.menu-list li:hover ul.drop-down {
+    display: block;
+}
+
+.menu-list li ul.drop-down li:first-child {
+}
+
+.menu-list li ul.drop-down li {
+    background-color: #d4d4d4;
+}
+
+.menu-list li:hover {
+    background-color: #d4d4d4;
+}
+.logoutContainer button{
+    float:left;
+    border: 1px solid #fff;
+    background-color: #262262;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.logoutContainer{
+    float:left;
+}
+.logoutContainer button:hover{
+    background-color:red;
+}
+.menu-list li ul.drop-down li:hover a {
+    background-color: #6d88a2;
+    color: #fff;
+}
+
+
+/* Form*/
+.rightContainer.newP .form-group{
+    padding: 10px;
+    width: 50%;
+    float: left;
+    padding-bottom: 0;
+}
+.newPersonal{
+    padding: 21px 0;
+    background-color: #6d88a2;
+    font-weight: 500;
+    color: #fff;
+    margin:0;
+}
+.rightContainer.newP .form-group .form-control{
+    height: 42px;
+    color: #000000;
+    outline: 0;
+    font-size: 13px;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+
+/*users*/
+.rightContainer.users table,tr,td,th {
+    border:1px solid #fff;
+}
+.rightContainer.users td,th {
+    padding:5px;
+    width:auto;
+}
+.rightContainer.newP .form-group label {
+    font-size:  13px;
+    font-weight: 500;
+}
+.userUpload{
+    width: 100%;
+    display:inline-block;
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.uploadButton{
+    position: relative;
+    text-align: center;
+    float: none;
+    width: 100%;
+    display: inline-block;
+    margin:30px 0;
+}
+.uploadFile{
+    text-align:center;
+    float:none;
+}
+.btn.btn-primary{
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+/* info css */
+.infoList{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border: 1px solid #fff;
+}
+.infoList .info{
+    width: 49%;
+    float: left;
+    color: #000;
+    background-color: #d4d4d4;
+    padding: 12px 10px;
+    text-align:  left;
+    font-weight: 500;
+    margin-bottom:  1%;
+    font-size: 13px;
+    border: 1px solid #fff;
+    margin-right: 2%;
+}
+.infoList .info span{
+    font-weight:600;
+    text-align:  left;
+}
+.rightContainer.newP.infoGeneral a{
+    padding: 5px 15px;
+    position: relative;
+    display: inline-block;
+    background-color: #40bf66;
+    color: #fff;
+    float:  right;
+    width: 102px;
+    margin: 16px auto;
+    font-weight: normal;
+    text-decoration: none;
+}
+.rightContainer.newP.infoGeneral a:hover{
+    background-color:#1d8e3f;
+}
+
+.rightContainer.newP.infoGeneral a.first{
+    background-color: #bd63c1;
+    float:  left;
+}
+.rightContainer.newP.infoGeneral a.first:hover{
+    background-color:#af20b5;
+
+}
+.infoList .info:nth-child(2n) {
+    margin-right: 0;
+}
+.rightContainer.newP.infoGeneral form{
+    width:100%;
+    float:left;
+}
+.img-responsive{
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+}
+.imageContainer img{
+    margin: 18px auto;
+    border: 2px solid #d4d4d4;
+    border-radius: 100%;
+}
+.formButtonContainer{
+    width:100%;
+    float:left;
+}
+.usersList{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    display: inline-block;
+    float: left;
+    background-color: #f1f1f1;
+    border: 1px solid #fff;
+}
+.usersList table{
+    width: 100%;
+    margin: 10px;
+    max-width: 850px;
+    float: left;
+    margin: 10px;
+    background-color: #d4d4d4;
+}
+.rightContainer.users .example{
+    margin: 10px auto;
+}
+.rightContainer.users .example input{
+    height:45px;
+    padding:10px;
+    border:1px solid #000;
+}
+.rightContainer.users .example button{
+    height:45px;
+}
+.pagination{
+    width: 100%;
+    display: inline-block;
+    margin:15px 0;
+}
+.pagination a{
+    border-radius:0;
+}
+.mainPageLogo{
+    margin:15px 0;
+}
+.makeComment, .makeComment button{
+    margin:15px;
+}

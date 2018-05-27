@@ -1,0 +1,35 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% from 'macros/formhelpers.html' import render_field %}
+<div class="mainPage">
+    {% include 'includes/_menu.html' %}
+    <div class="rightContainer newP infoGeneral">
+        <h1 class="newPersonal">Kullanıcı Üniversite Bilgileri Düzenleme</h1>
+        <a class="first" href="{{ url_for('users.show_user_university_info', user_id=user.id)}}">Geri</a>
+        <form method="POST" action="">
+            <div class="form-group">
+                {{ render_field(form.university_student_no, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.faculty, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.department, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.teaching_style, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.student_score, class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.completed_yok, class_="form-control") }}
+            </div>
+            <p class="formButtonContainer">
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'layouts/main.html' %}
+
+{% block body %}
+    <div class="mainPage">
+        {% include 'includes/_menu.html' %}
+
+        <div class="rightContainer users">
+            <h1 class="newPersonal">Loglar</h1>
+            {% if logs %}
+                {% for log in logs %}
+                    <div>
+                        <b>Degeri:</b> {{ log.value }} | <b>Zamani:</b> {{ log.time }} | <b>Kim Degistirdi:</b> {{ log.user.username }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                Log yok.
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
