@@ -1,9 +1,11 @@
 ## DEVELOPMENT - Flask Web App - Docker
-Bilgisayarina `docker` indir.
+Bilgisayarina `docker` indir. Docker servisini calistirmayi unutma.
 
-Reponun klonunu al. Ve klasorun icine git. Daha sonra sadece `$ sudo docker-compose up` komutu ile herseyi ayaga kaldir.
+Reponun klonunu al. Ve klasorun icindeki code dizinine git. Daha sonra sadece `$ sudo docker-compose up` komutu ile herseyi ayaga kaldir.
 
-Daha sonrasinda "localhost:5000/initial_db" diyerek tablolari olusturuyoruz.
+Daha sonrasinda ilk olarak tablolar olusturulmali, bunun icin "localhost:5000/initial_db" linkine gidiyoruz.
+
+Bu adimlari gerceklestirdikten sonra uygulamayi acip kullanabilirsin.
 
 ## DEVELOPMENT - Flask Web App - Manuel
 
@@ -39,7 +41,7 @@ $ source /home/pleycpl/.local/share/virtualenvs/bi-usis-nhPhaM-A/bin/activate
 
 ```
 
-Mysql indir. Ayarlarini yap.
+Mysql indir. Ayarlarini yap. code/web/app.cfg deki ayarlari degistiriyoruz.
 
 ## DEVELOPMENT - Database Schema
 

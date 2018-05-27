@@ -66,8 +66,8 @@ def update_photo(user_id):
         f.save(file_path)
         user.photoname = "{}{}".format(hash_value, extension)
         db.session.commit()
-        return 'file uploaded successfully'
-        #return redirect(url_for('users.show_user', user_id=user_id))
+        flash('file uploaded successfully, refresh page')
+        return redirect(url_for('users.show_user', user_id=user_id))
 
     return render_template('user/upload_photo.html', context=g.user_context)
 
